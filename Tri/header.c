@@ -2,7 +2,7 @@
 
 Medicament* initMedoc() {
 	Medicament* newMedoc = malloc(sizeof(Medicament));
-	printf("Nom: ");
+	printf("-----NOUVEAU MEDICAMENT-----\nNom: ");
 	scanf_s("%s", newMedoc->nom, 50);
 	getchar();
 	printf("Code-medicament: ");
@@ -48,6 +48,6 @@ void tri_a_bulles(Medicament** tab, int taille) {
 
 void afficher(Medicament** tab, int taille){
 	for (int i = 0; i < taille; i++) {
-		printf("%s -- %d -- %d/%d/%d -- %d/%d/%d -- %lf", tab[i]->nom, tab[i]->code, tab[i]->fabrication[0], tab[i]->fabrication[1], tab[i]->fabrication[2], tab[i]->peremption[0], tab[i]->peremption[1], tab[i]->peremption[2], tab[i]->prix);
+		printf("%s -- %d -- %d/%d/%d -- %d/%d/%d -- %.2f\n", tab[i]->nom, tab[i]->code, tab[i]->fabrication[0], tab[i]->fabrication[1], tab[i]->fabrication[2], tab[i]->peremption[0], tab[i]->peremption[1], tab[i]->peremption[2], tab[i]->prix);
 	}
 }
