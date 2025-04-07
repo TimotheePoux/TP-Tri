@@ -19,7 +19,7 @@ Medicament* initMedoc() {
 	scanf_s("%d", &(newMedoc->peremption[1]));
 	printf("     Jour: ");
 	scanf_s("%d", &(newMedoc->peremption[0]));
-	printf("Code-medicament: ");
+	printf("Prix: ");
 	scanf_s("%lf", &(newMedoc->prix));
 	return newMedoc;
 }
@@ -43,5 +43,11 @@ void tri_a_bulles(Medicament** tab, int taille) {
 		if (trie) {
 			return;
 		}
+	}
+}
+
+void afficher(Medicament** tab, int taille){
+	for (int i = 0; i < taille; i++) {
+		printf("%s -- %d -- %d/%d/%d -- %d/%d/%d -- %lf", tab[i]->nom, tab[i]->code, tab[i]->fabrication[0], tab[i]->fabrication[1], tab[i]->fabrication[2], tab[i]->peremption[0], tab[i]->peremption[1], tab[i]->peremption[2], tab[i]->prix);
 	}
 }
