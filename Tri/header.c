@@ -1,6 +1,28 @@
 #include"header.h"
 
-
+Medicament* initMedoc() {
+	Medicament* newMedoc = malloc(sizeof(Medicament));
+	printf("Nom: ");
+	scanf_s("%s", newMedoc->nom, 50);
+	getchar();
+	printf("Code-medicament: ");
+	scanf_s("%d", &(newMedoc->code));
+	printf("Date de fabrication:\n     Annee: ");
+	scanf_s("%d", &(newMedoc->fabrication[2]));
+	printf("     Mois: ");
+	scanf_s("%d", &(newMedoc->fabrication[1]));
+	printf("     Jour: ");
+	scanf_s("%d", &(newMedoc->fabrication[0]));
+	printf("Date de Peremption:\n     Annee: ");
+	scanf_s("%d", &(newMedoc->peremption[2]));
+	printf("     Mois: ");
+	scanf_s("%d", &(newMedoc->peremption[1]));
+	printf("     Jour: ");
+	scanf_s("%d", &(newMedoc->peremption[0]));
+	printf("Code-medicament: ");
+	scanf_s("%lf", &(newMedoc->prix));
+	return newMedoc;
+}
 
 void swap(Medicament** tab, int j) {
 	Medicament* temp = tab[j];

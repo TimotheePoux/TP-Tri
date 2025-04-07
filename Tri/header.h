@@ -9,7 +9,7 @@ typedef struct {
 	int code;
 	int fabrication[3];
 	int peremption[3];
-	int prix;
+	double prix;
 }Medicament;
 
 void swap(Medicament** tab, int j);
