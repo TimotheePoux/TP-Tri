@@ -57,6 +57,7 @@ void recherche_dicho(Medicament** tab, int taille) {
 	int fin = taille - 1;
 	int trouve = 0;
 	char atrouver[50] = "";
+	printf("-----RECHERCHE DICHOTOMIQUEx-----\nNom: ");
 	scanf_s("%s", atrouver, 50);
 	getchar();
 	int peremption[3] = { 0,0,0 };
@@ -71,10 +72,10 @@ void recherche_dicho(Medicament** tab, int taille) {
 			trouve = 1;
 		}
 		else if ((peremption[2] > tab[mil]->peremption[2]) || (peremption[2] == tab[mil]->peremption[2] && peremption[1] > tab[mil]->peremption[1]) || (peremption[2] == tab[mil]->peremption[2] && peremption[1] == tab[mil]->peremption[1] && peremption[0] > tab[mil]->peremption[0])) {
-			debut = mil + 1;
+			debut = mil;
 		}
 		else {
-			fin = mil - 1;
+			fin = mil;
 		}
 	if (trouve) {
 		printf("La valeur %s est au rang %d", atrouver, mil);
