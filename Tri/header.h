@@ -12,6 +12,7 @@ typedef struct {
 	double prix;
 }Medicament;
 
+Medicament* initMedoc();
 void swap(Medicament** tab, int j);
 void tri_a_bulles(Medicament** tab, int taille);
 
