@@ -51,3 +51,35 @@ void afficher(Medicament** tab, int taille){
 		printf("%s -- %d -- %d/%d/%d -- %d/%d/%d -- %.2f\n", tab[i]->nom, tab[i]->code, tab[i]->fabrication[0], tab[i]->fabrication[1], tab[i]->fabrication[2], tab[i]->peremption[0], tab[i]->peremption[1], tab[i]->peremption[2], tab[i]->prix);
 	}
 }
+
+void recherche_dicho(Medicament** tab, int taille) {
+	int debut = 0;
+	int fin = taille - 1;
+	int trouve = 0;
+	char atrouver[50] = "";
+	scanf_s("%s", atrouver, 50);
+	getchar();
+	int peremption[3] = { 0,0,0 };
+	printf("Date de Peremption:\n     Annee: ");
+	scanf_s("%d", &(peremption[2]));
+	printf("     Mois: ");
+	scanf_s("%d", &(peremption[1]));
+	printf("     Jour: ");
+	scanf_s("%d", &(peremption[0]));
+		int mil = (debut+fin)/2;
+		if (strcmp(tab[mil]->nom, atrouver) == 0) {
+			trouve = 1;
+		}
+		else if ((peremption[2] > tab[mil]->peremption[2]) || (peremption[2] == tab[mil]->peremption[2] && peremption[1] > tab[mil]->peremption[1]) || (peremption[2] == tab[mil]->peremption[2] && peremption[1] == tab[mil]->peremption[1] && peremption[0] > tab[mil]->peremption[0])) {
+			debut = mil + 1;
+		}
+		else {
+			fin = mil - 1;
+		}
+	if (trouve) {
+		printf("La valeur %s est au rang %d", atrouver, mil);
+	}
+	else {
+		printf("La valeur %s n'est pas dans le tableau", atrouver);
+	}
+}
