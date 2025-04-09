@@ -87,7 +87,7 @@ void recherche_dicho(Medicament** tab, int taille) {
 
 void plus_cher(Medicament** tab, int taille) {
 	int index = 0;
-	for i = 1; i < taille; i++) {
+	for (int i = 1; i < taille; i++) {
 		if (tab[index]->prix < tab[i]->prix) {
 			index = i;
 		}
