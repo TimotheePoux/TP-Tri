@@ -7,8 +7,8 @@ int main() {
 		tab[i] = initMedoc();
 	}
 	tri_a_bulles(tab, taille);
-	afficher(tab, taille	);
-	recherche_dicho(tab, taille);
+	afficher(tab, taille);
+	plus_cher(tab, taille);
 
 	return 0;
 }

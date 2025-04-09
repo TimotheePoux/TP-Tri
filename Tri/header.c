@@ -84,3 +84,13 @@ void recherche_dicho(Medicament** tab, int taille) {
 		printf("La valeur %s n'est pas dans le tableau", atrouver);
 	}
 }
+
+void plus_cher(Medicament** tab, int taille) {
+	int index = 0;
+	for i = 1; i < taille; i++) {
+		if (tab[index]->prix < tab[i]->prix) {
+			index = i;
+		}
+	}
+	printf("Le medicament %s est le plus cher.", tab[index]->nom);
+}
