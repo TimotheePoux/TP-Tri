@@ -8,7 +8,7 @@ int main() {
 	}
 	tri_a_bulles(tab, taille);
 	afficher(tab, taille);
-	plus_cher(tab, taille);
+	taux_vendus(tab, taille);
 
 	return 0;
 }

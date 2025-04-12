@@ -21,6 +21,10 @@ Medicament* initMedoc() {
 	scanf_s("%d", &(newMedoc->peremption[0]));
 	printf("Prix: ");
 	scanf_s("%lf", &(newMedoc->prix));
+	printf("Unites vendues:");
+	scanf_s("%d", &(newMedoc->vendus));
+	printf("Unites restants en stock: ");
+	scanf_s("%d", &(newMedoc->restants));
 	return newMedoc;
 }
 
@@ -48,7 +52,7 @@ void tri_a_bulles(Medicament** tab, int taille) {
 
 void afficher(Medicament** tab, int taille){
 	for (int i = 0; i < taille; i++) {
-		printf("%s -- %d -- %d/%d/%d -- %d/%d/%d -- %.2f\n", tab[i]->nom, tab[i]->code, tab[i]->fabrication[0], tab[i]->fabrication[1], tab[i]->fabrication[2], tab[i]->peremption[0], tab[i]->peremption[1], tab[i]->peremption[2], tab[i]->prix);
+		printf("%s -- %d -- %d/%d/%d -- %d/%d/%d -- %.2f -- %d -- %d\n", tab[i]->nom, tab[i]->code, tab[i]->fabrication[0], tab[i]->fabrication[1], tab[i]->fabrication[2], tab[i]->peremption[0], tab[i]->peremption[1], tab[i]->peremption[2], tab[i]->prix, tab[i]->vendus, tab[i]->restants);
 	}
 }
 
@@ -57,7 +61,7 @@ void recherche_dicho(Medicament** tab, int taille) {
 	int fin = taille - 1;
 	int trouve = 0;
 	char atrouver[50] = "";
-	printf("-----RECHERCHE DICHOTOMIQUEx-----\nNom: ");
+	printf("-----RECHERCHE DICHOTOMIQUE-----\nNom: ");
 	scanf_s("%s", atrouver, 50);
 	getchar();
 	int peremption[3] = { 0,0,0 };
@@ -93,4 +97,13 @@ void plus_cher(Medicament** tab, int taille) {
 		}
 	}
 	printf("Le medicament %s est le plus cher.", tab[index]->nom);
+}
+
+void taux_vendus(Medicament** tab, int taille) {
+	printf("------TAUX DE VENTE------\n");
+	for (int i = 0; i < taille; i++) {
+		float vendus = tab[i]->vendus;
+		float restants = tab[i]->restants;
+		printf("%s: %.0f\n", tab[i]->nom, (vendus/(vendus+restants)) * 100);
+	}
 }
