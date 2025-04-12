@@ -55,18 +55,23 @@ int greater(Liste* liste) {
 
 Liste* tri(Liste* liste) {
 	Liste* newListe = malloc(sizeof(Liste));
-	liste->premier = NULL;
+	newListe->premier = NULL;
 	while (liste->premier != NULL) {
 		int greatercode = greater(liste);
 		Medicament* medicament = liste->premier;
 		while (1) {
-			if (medicament->code = greatercode) {
-				Medicament* post = medicament->suivant;
-				Medicament* pre = liste->premier;
-				while (pre->suivant != medicament) {
-					pre = pre->suivant;
+			if (medicament->code == greatercode) {
+				if (medicament == liste->premier) {
+					liste->premier = medicament->suivant;
 				}
-				pre->suivant = post;
+				else {
+					Medicament* post = medicament->suivant;
+					Medicament* pre = liste->premier;
+					while (pre->suivant != medicament) {
+						pre = pre->suivant;
+					}
+					pre->suivant = post;
+				}
 				medicament->suivant = newListe->premier;
 				newListe->premier = medicament;
 				break;
@@ -84,6 +89,6 @@ void libere(Liste* liste) {
 		Medicament* temp = liste->premier;
 		liste->premier = temp->suivant;
 		free(temp);
-		temp = NULL;	
+		temp = NULL;
 	}
 }
