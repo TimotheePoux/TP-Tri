@@ -9,6 +9,8 @@ int main() {
 	affiche(tab, taille);
 	quicksort(tab, 0, taille-1);
 	affiche(tab, taille);
+	tri_insertion(tab, taille);
+	affiche(tab, taille);
 
 	for (int i = 0; i < taille; i++) {
 		free(tab[i]);

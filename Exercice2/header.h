@@ -13,6 +13,7 @@ typedef struct {
 
 Etudiant* initEtud();
 void affiche(Etudiant** tab, int taille);
-void quicksort(Etudiant* tab[], int debut, int fin);
+void quicksort(Etudiant** tab, int debut, int fin);
+void tri_insertion(Etudiant** tab, int taille);
 
 #endif
