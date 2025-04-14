@@ -2,6 +2,9 @@
 
 Etudiant* initEtud() {
     Etudiant* newEtud = malloc(sizeof(Etudiant));
+    if (newEtud == NULL) {
+        return;
+    }
     printf("-----NOUVEL ETUDIANT-----\nNom: ");
     scanf_s("%s", newEtud->nom, 50);
     getchar();
