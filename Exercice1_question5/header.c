@@ -55,6 +55,9 @@ int greater(Liste* liste) {
 
 Liste* tri(Liste* liste) {
 	Liste* newListe = malloc(sizeof(Liste));
+	if (newListe == NULL) {
+		return;
+	}
 	newListe->premier = NULL;
 	while (liste->premier != NULL) {
 		int greatercode = greater(liste);
