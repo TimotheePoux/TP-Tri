@@ -5,6 +5,9 @@ int* merge(int* uno, int tuno, int* dos, int tdos) {
 	int i = 0;
 	int j = 0;
 	int* newTab = malloc(sizeof(int) * (tuno+tdos));
+	if (newTab == NULL) {
+		return;
+	}
 	for (int k = 0; k < (tuno + tdos) -1; k++) {
 		if (uno[i] < dos[j]) {
 			newTab[k] = uno[i];
